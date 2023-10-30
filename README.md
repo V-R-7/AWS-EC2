@@ -1,1 +1,78 @@
 # AWS-EC2
+This is a documentation while I was learning to create an AWS EC2 Instance.
+
+## Pre- Requisites :
+AWS Account with IAM User with Admin permissions.
+
+## Creating an EC2 Instance :
+EC2 > Instances > Launch an instance
+
+Before creating an Instance make sure the region you want is selected as desired.
+- Select the region near
+  This will make the region of your EC2 Instance to Mumbai.
+
+Now gonna create an AMI (An AMI is a template that contains the software configuration (operating system, application server, and applications) required to launch your instance.)
+- Select an AMI - Amazon Linux 2023 AMI 2023
+- Select an Instance Type - t2.micro
+- Create a key pair with RSA keypair type & download .pem file to the computer (keep the file safe with you).
+- Storage settings is set by default (can skip it)
+- Final step click on Launch Instance
+
+Now you can able to see your created instance.
+
+## Connecting to EC2 Instance Using SSH :
+
+- Install FileZilla if you do not have.
+- To Connect the Instance using FileZilla
+   - Go to File > Site Manager
+   - Site Manager > Create New Site 
+   - Select Protocol >  SFTP & Host - Set your Public IPV4 address and Port as 22
+   - Logon Type > Normal
+   - User > ec2-user ( For AMI - Amazon Linux 2023 AMI)
+     Note : the user names will differ with AMI'S , refer below:
+     The default user names are:
+     1.For Amazon Linux 2023, Amazon Linux 2, or the Amazon Linux AMI, the user name is ec2-user.
+     2.For a CentOS AMI, the user name is centos or ec2-user.
+     3.For a Debian AMI, the user name is admin.
+     4.For a Fedora AMI, the user name is fedora or ec2-user.
+     5.For a RHEL AMI, the user name is ec2-user or root.
+     6.For a SUSE AMI, the user name is ec2-user or root.
+     7.For an Ubuntu AMI, the user name is ubuntu.
+     8.For an Oracle AMI, the user name is ec2-user.
+     9.For a Bitnami AMI, the user name is bitnami.
+     Otherwise, check with the AMI provider.
+     
+   - Upload the .pem file which you downloaded when creating an instance to this instance.
+   - Once done Go to your Instance and click on connect on the console.
+     (EC2 > Instances > Your Instance)
+
+  ### Connect to instance
+  Select Connection type > Connect using EC2 Instance Connect
+  To connect to an instance using the instance ID and your own private key file:
+
+  - If you want to connect to your instance over an EC2 Instance Connect Endpoint using your own private key, specify the instance ID and the path to the private key file. Do not include file:// in the path; the 
+    following example will fail: file:///path/to/key.
+    (aws ec2-instance-connect ssh --instance-id i-1234567890example --private-key-file /path/to/key.pem)
+  - Type the following command
+    
+    ```
+    ssh \-i key-pair-name.pem ec2-user@Public IPv4 address
+    ```
+  - After typing the above command, you will face an issue like below image:
+
+    ![image](https://github.com/V-R-7/AWS-EC2/assets/62888693/5392ca8d-8110-42b5-8ea3-2162c1f571bc)
+     
+    Warning: UNPROTECTED PRIVATE KEY FILE! 
+    It returns the above, so we must give permission using chmod.
+    If you plan to use an SSH client on a macOS or Linux computer to connect to your Linux instance, use the following command to set the permissions of your private key file so that only you can read it
+
+    ![image](https://github.com/V-R-7/AWS-EC2/assets/62888693/3248a293-b9c0-477f-a599-49da3b54c328)
+
+  If you do not set these permissions, then you cannot connect to your instance using this key pair. For more information, see Error: Unprotected private key file.
+  - Once typed chmod command , try the below command
+
+      ```
+      ssh -i key-pair-name.pem ec2-user@Public IPv4 address
+      ```
+  - Finally you will be able to login your created Instance 🎉.
+    ![image](https://github.com/V-R-7/AWS-EC2/assets/62888693/48870187-a05c-4f0b-b199-86114145c51e)
