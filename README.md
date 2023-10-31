@@ -8,8 +8,7 @@ AWS Account with IAM User with Admin permissions.
 EC2 > Instances > Launch an instance
 
 Before creating an Instance make sure the region you want is selected as desired.
-- Select the region near
-  This will make the region of your EC2 Instance to Mumbai.
+- Select the region nearby.
 
 Now gonna create an AMI (An AMI is a template that contains the software configuration (operating system, application server, and applications) required to launch your instance.)
 - Select an AMI - Amazon Linux 2023 AMI 2023
@@ -30,7 +29,9 @@ Now you can able to see your created instance.
    - Logon Type > Normal
    - User > ec2-user ( For AMI - Amazon Linux 2023 AMI)
      Note : the user names will differ with AMI'S , refer below:
+
      The default user names are:
+
      1.For Amazon Linux 2023, Amazon Linux 2, or the Amazon Linux AMI, the user name is ec2-user.
      2.For a CentOS AMI, the user name is centos or ec2-user.
      3.For a Debian AMI, the user name is admin.
