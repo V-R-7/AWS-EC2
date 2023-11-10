@@ -77,3 +77,14 @@ service httpd start
 # Enable the Apache service to start on boot
 chkconfig httpd on
 ```
+
+This above script does the following:
+
+* Writes a greeting message to a file (user-data-output.txt) in the home directory of the default user (ec2-user for Amazon Linux instances).
+* Updates the system packages using yum.
+* Installs the Apache web server (httpd) using yum.
+* Starts the Apache service.
+* Configures the Apache service to start on boot.
+
+When you launch an EC2 instance and include this script as user data, the specified actions will be performed automatically during the instance initialization.
+
