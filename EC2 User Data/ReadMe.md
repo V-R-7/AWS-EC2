@@ -10,7 +10,7 @@ EC2 User Data is used to automate boot tasks such as :
 
 ## Execution 
 
-It is an ==One-Time Execution== , i.e., User data scripts run only once during the instance's first boot.
+It is an One-Time Execution, i.e., User data scripts run only once during the instance's first boot.
 
 ## Meta Data access
 
