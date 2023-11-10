@@ -111,3 +111,5 @@ Now you can able to see your created instance in the portal.
     ![279161655-48870187-a05c-4f0b-b199-86114145c51e](https://github.com/V-R-7/AWS-EC2/assets/62888693/d27a9f7b-ff98-4b9e-9b0b-081eba32e965)
 
    Congratulations! You have successfully configured an EC2 instance 🎉.
+
+I have added folders for specific topics on EC2 for more learning.
