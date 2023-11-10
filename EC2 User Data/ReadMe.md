@@ -59,3 +59,21 @@ The main logs are:
 /var/log/cloud-init-output.log
 ```
 
+## Example User Data
+
+```
+#!/bin/bash
+echo "Hello, this is the EC2 user data script!" > /home/ec2-user/user-data-output.txt
+
+# Update the system
+yum update -y
+
+# Install a sample application or software
+yum install -y httpd
+
+# Start the Apache web server
+service httpd start
+
+# Enable the Apache service to start on boot
+chkconfig httpd on
+```
