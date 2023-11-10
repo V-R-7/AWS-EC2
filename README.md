@@ -4,11 +4,43 @@ This is a documentation while I was learning to create an AWS EC2 Instance.
 ## Pre- Requisites :
 AWS Account with IAM User with Admin permissions.
 
+## Basics
+Elastic Compute Cloud is known as EC2, It is an Infrastructure as service which allows users to run virtual servers, known as instances, in the cloud.
+
+It offers capability of :
+- Renting Virtual Machines (EC2)
+- Storing data on virtual drives (EBS which is Elastic Block Storage, an AWS service)
+- Distributes load across machines (ELB which is Elastic Load Balance, an AWS service)
+- Scaling the services using an auto scaling group (ASG which is Auto Scaling group)
+
+EC2 follows a pay-as-you-go pricing model, where you pay for the compute capacity you use.
+
+Pricing is based on factors such as the instance type, region, and usage (On-Demand, Reserved Instances, or Spot Instances).
+
+EC2 is versatile and can be used for a wide range of applications, including web hosting, application development and testing, big data analytics, and more.
+
+## EC2 Configurations :
+
+Choose an Amazon Machine Image (AMI) which is Operating System.
+Choose how much compute power & cores (CPU)
+Choose how much RAM (Random Access Memory) need to be configured.
+Choose how much storage space - Network attached (EBS & EFS) or Hardware at EC2 Instance store.
+Choose the Network card - speed and public IP address
+Set Security Group i.e., Firewall Rules
+Optional - EC2 User Data which is a bootstrap script (configure at first launch)
+
+
 ## Creating an EC2 Instance :
+
+Login to AWS Management Console.
+
+Navigate to EC2:
 EC2 > Instances > Launch an instance
 
 Before creating an Instance make sure the region you want is selected as desired.
 - Select the region nearby.
+
+Click on Launch Instance.
 
 Now gonna create an AMI (An AMI is a template that contains the software configuration (operating system, application server, and applications) required to launch your instance.)
 - Select an AMI - Amazon Linux 2023 AMI 2023
@@ -47,13 +79,12 @@ Now you can able to see your created instance.
    - Once done Go to your Instance and click on connect on the console.
      (EC2 > Instances > Your Instance)
 
-  ### Connect to instance
+## Connect to instance
   Select Connection type > Connect using EC2 Instance Connect
   To connect to an instance using the instance ID and your own private key file:
 
-  - If you want to connect to your instance over an EC2 Instance Connect Endpoint using your own private key, specify the instance ID and the path to the private key file. Do not include file:// in the path; the 
-    following example will fail: file:///path/to/key.
-    (aws ec2-instance-connect ssh --instance-id i-1234567890example --private-key-file /path/to/key.pem)
+  - If you want to connect to your instance over an EC2 Instance Connect Endpoint using your own private key, specify the instance ID and the path to the private key file. Do not include file:// in the path; the following example will fail: file:///path/to/key.(aws ec2-instance-connect ssh --instance-id i-1234567890example --private-key-file /path/to/key.pem)
+  
   - Type the following command
     
     ```
@@ -61,8 +92,8 @@ Now you can able to see your created instance.
     ```
   - After typing the above command, you will face an issue like below image:
 
-    ![image](https://github.com/V-R-7/AWS-EC2/assets/62888693/5392ca8d-8110-42b5-8ea3-2162c1f571bc)
-     
+    ![279158615-5392ca8d-8110-42b5-8ea3-2162c1f571bc](https://github.com/V-R-7/AWS-EC2/assets/62888693/4b1a8cc8-8867-467e-893c-80b1e995cebb)
+
     Warning: UNPROTECTED PRIVATE KEY FILE! 
     It returns the above, so we must give permission using chmod.
     If you plan to use an SSH client on a macOS or Linux computer to connect to your Linux instance, use the following command to set the permissions of your private key file so that only you can read it
@@ -76,4 +107,6 @@ Now you can able to see your created instance.
       ssh -i key-pair-name.pem ec2-user@Public IPv4 address
       ```
   - Finally you will be able to login your created Instance 🎉.
-    ![image](https://github.com/V-R-7/AWS-EC2/assets/62888693/48870187-a05c-4f0b-b199-86114145c51e)
+
+    ![279161655-48870187-a05c-4f0b-b199-86114145c51e](https://github.com/V-R-7/AWS-EC2/assets/62888693/d27a9f7b-ff98-4b9e-9b0b-081eba32e965)
+
