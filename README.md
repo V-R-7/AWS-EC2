@@ -43,13 +43,13 @@ Before creating an Instance make sure the region you want is selected as desired
 Click on Launch Instance.
 
 Now gonna create an AMI (An AMI is a template that contains the software configuration (operating system, application server, and applications) required to launch your instance.)
-- Select an AMI - Amazon Linux 2023 AMI 2023
-- Select an Instance Type - t2.micro
-- Create a key pair with RSA keypair type & download .pem file to the computer (keep the file safe with you).
-- Storage settings is set by default (can skip it)
-- Final step click on Launch Instance
+* Select an AMI - Amazon Linux 2023 AMI 2023
+* Select an Instance Type - t2.micro
+* Create a key pair with RSA keypair type & download .pem file to the computer (keep the file safe with you).
+* Storage settings is set by default (can skip it)
+* Final step click on Launch Instance
 
-Now you can able to see your created instance.
+Now you can able to see your created instance in the portal.
 
 ## Connecting to EC2 Instance Using SSH :
 
@@ -79,7 +79,7 @@ Now you can able to see your created instance.
    - Once done Go to your Instance and click on connect on the console.
      (EC2 > Instances > Your Instance)
 
-## Connect to instance
+## Connect to the Linux Instance
   Select Connection type > Connect using EC2 Instance Connect
   To connect to an instance using the instance ID and your own private key file:
 
@@ -106,7 +106,8 @@ Now you can able to see your created instance.
       ```
       ssh -i key-pair-name.pem ec2-user@Public IPv4 address
       ```
-  - Finally you will be able to login your created Instance 🎉.
+  - Finally you will be able to login your created Instance.
 
     ![279161655-48870187-a05c-4f0b-b199-86114145c51e](https://github.com/V-R-7/AWS-EC2/assets/62888693/d27a9f7b-ff98-4b9e-9b0b-081eba32e965)
 
+   Congratulations! You have successfully configured an EC2 instance 🎉.
