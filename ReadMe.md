@@ -1,5 +1,5 @@
 # AWS-EC2
-This is a documentation while I was learning to create an AWS EC2 Instance.
+This is a documentation taken while I was learning to create an AWS EC2 Instance.
 
 ## Pre- Requisites :
 AWS Account with IAM User with Admin permissions.
