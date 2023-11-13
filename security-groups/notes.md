@@ -10,7 +10,7 @@ It allows traffic which you specify others are blocked.
 To summarize :
 - They are instance level firewall which allows users to restrict the incoming and outgoing traffic by specifying the traffic which are allowed.
   
-By default, the port (22) SSH is configured.
+By default, the SSH port (22) is configured.
 We may also allow other common ports like HTTP (80), HTTPS (443), RDP (3389)
 
 ## Default Traffic by Security Group
