@@ -18,3 +18,7 @@ We may also allow other common ports like HTTP (80), HTTPS (443), RDP (3389)
 You define rules which are inbound and outbound.
 
 ![EC2 Security Group](https://github.com/V-R-7/AWS-EC2/assets/62888693/3561177b-d4e5-4c0b-a308-4b047a7fd6cb)
+
+To summarize :
+- They are instance level firewall which allows users to restrict the incoming and outgoing traffic by specifying the traffic which are allowed.
+  
